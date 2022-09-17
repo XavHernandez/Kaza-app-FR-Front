@@ -6,13 +6,13 @@
 }
 
 .app {
-  background-color: red;
+  background-color: white;
+}
 
-  &_logo {
-    height: 1em;
-    padding: 1rem;
-    will-change: filter;
-  }
+.logo {
+  height: 3rem;
+  padding: 1rem;
+  will-change: filter;
 }
 
 .logo:hover {
