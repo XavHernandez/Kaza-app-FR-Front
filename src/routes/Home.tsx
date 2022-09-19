@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import type Flat from "../entities/Flat.interface";
 
 const Home: React.FunctionComponent = () => {
-  const [flats, setFlats] = useState(null);
+  const [flats, setFlats] = useState<Flat[]>([]);
 
   useEffect(() => {
     const getFlats = async () => {
