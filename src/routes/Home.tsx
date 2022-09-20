@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import type Flat from "../entities/Flat.interface";
 
 const Home: React.FunctionComponent = () => {

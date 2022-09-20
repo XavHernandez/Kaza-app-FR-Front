@@ -1,6 +1,5 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import reactLogo from "./assets/react.svg";
 import styles from "./App.module.scss";
 
 const App: React.FunctionComponent = () => {
