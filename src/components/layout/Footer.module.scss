@@ -1,0 +1,34 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 210px;
+  background: black;
+  color: white;
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &_logo {
+    svg {
+      height: 40px;
+    }
+  }
+
+  &_copyright {
+    font-size: 12px;
+    margin-top: 30px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    align-items: flex-end;
+    padding-bottom: 10px;
+  }
+}
