@@ -29,7 +29,7 @@ const Footer: React.FunctionComponent = () => {
             />
           </svg>
         </div>
-        <p className={styles.footer_copyright}>&#169; 2002 Kasa. All rights reserved</p>
+        <p className={styles.footer_copyright}>&#169; 2022 Kasa. All rights reserved</p>
       </div>
     </footer>
   );

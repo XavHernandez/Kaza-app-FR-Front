@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: min(100%, 1200px);
     padding: 1rem;
     margin-top: 20px;
 
