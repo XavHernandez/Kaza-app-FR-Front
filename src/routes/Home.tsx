@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import type Flat from "../entities/Flat.interface";
 import getFlatsData from "../api/getFlatsData";
 import Hero from "../components/Home/Hero";
+import styles from "./Home.module.scss";
 
 const Home: React.FunctionComponent = () => {
   const flatsData = useLoaderData() as Flat[];
@@ -10,10 +11,13 @@ const Home: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <Hero />
-      <h2>Home</h2>
-      {flatsData.map((flat) => {
-        return <p key={flat.id}>{flat.title}</p>;
-      })}
+      <section className={styles.flats}>
+        <div className={styles.flats_grid}>
+          {flatsData.map((flat) => {
+            return <p key={flat.id}>{flat.title}</p>;
+          })}
+        </div>
+      </section>
     </React.Fragment>
   );
 };
