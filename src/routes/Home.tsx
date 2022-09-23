@@ -1,19 +1,23 @@
-import { useEffect, useState } from "react";
+import React from "react";
+import { useLoaderData } from "react-router-dom";
 import type Flat from "../entities/Flat.interface";
+import getFlatsData from "../api/getFlatsData";
 
 const Home: React.FunctionComponent = () => {
-  const [flats, setFlats] = useState<Flat[]>([]);
+  const flatsData = useLoaderData() as Flat[];
 
-  useEffect(() => {
-    const getFlats = async () => {
-      fetch("src/api/data.json")
-        .then((response) => response.json())
-        .then((data) => setFlats(data));
-    };
-    getFlats();
-  }, []);
-
-  return <h2>Home</h2>;
+  return (
+    <React.Fragment>
+      <h2>Home</h2>
+      {flatsData.map((flat) => {
+        return <p key={flat.id}>{flat.title}</p>;
+      })}
+    </React.Fragment>
+  );
 };
+
+export function loader() {
+  return getFlatsData();
+}
 
 export default Home;
