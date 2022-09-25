@@ -4,6 +4,7 @@ import type Flat from "../entities/Flat.interface";
 import getFlatsData from "../api/getFlatsData";
 import Hero from "../components/Home/Hero";
 import FlatCard from "../components/Home/FlatCard";
+import background from "../assets/hero_home.jpg";
 import styles from "./Home.module.scss";
 
 const Home: React.FunctionComponent = () => {
@@ -11,7 +12,7 @@ const Home: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <Hero />
+      <Hero imageUrl={background} title={true} />
       <section className={styles.flats}>
         <div className={styles.flats_grid}>
           {flatsData.map((flat) => {
