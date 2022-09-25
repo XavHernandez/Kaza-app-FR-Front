@@ -14,4 +14,4 @@ React / JSX / TypeScript / React-Router 6.4 / Sass Modules / Vite
 
 ## Tester le projet
 
-Pour tester simplement & rapidement, veuillez préférer visiter la démo en ligne : [No active Live Version]() <br>
+Pour tester simplement & rapidement, veuillez préférer visiter la démo en ligne : [No live version]() <br>
