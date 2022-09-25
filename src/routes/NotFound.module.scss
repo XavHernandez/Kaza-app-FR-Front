@@ -1,0 +1,49 @@
+@import "./App.module.scss";
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min(90%, 1200px);
+  color: $primary;
+  text-align: center;
+  height: calc(100vh - 270px);
+
+  &_code {
+    font-size: 96px;
+    font-weight: 700;
+
+    @media screen and (min-width: 768px) {
+      font-size: 288px;
+    }
+  }
+
+  &_message {
+    font-size: 18px;
+    font-weight: 500;
+
+    @media screen and (min-width: 768px) {
+      font-size: 36px;
+    }
+  }
+
+  a {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 100px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 18px;
+      margin-top: 70px;
+    }
+  }
+
+  a.active {
+    color: $primary;
+  }
+
+  a:visited {
+    color: $primary;
+  }
+}
