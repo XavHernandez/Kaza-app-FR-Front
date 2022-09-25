@@ -7,12 +7,16 @@
     width: min(90%, 1200px);
     display: grid;
     place-content: center;
-    grid-gap: 1rem;
+    justify-items: center;
+    grid-gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 337px), 1fr));
+    margin: 20px 0;
 
     @media screen and (min-width: 768px) {
       background-color: #f6f6f6;
       border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 30px;
     }
   }
 }
