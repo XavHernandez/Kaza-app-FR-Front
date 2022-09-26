@@ -46,4 +46,8 @@
   a:visited {
     color: $primary;
   }
+
+  @media screen and (min-width: 768px) {
+    height: calc(100vh - 70px);
+  }
 }
