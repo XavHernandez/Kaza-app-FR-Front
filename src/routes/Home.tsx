@@ -1,6 +1,6 @@
+import type Flat from "../entities/Flat.interface";
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import type Flat from "../entities/Flat.interface";
 import getFlatsData from "../api/getFlatsData";
 import Hero from "../components/Home/Hero";
 import FlatCard from "../components/Home/FlatCard";
@@ -16,7 +16,7 @@ const Home: React.FunctionComponent = () => {
       <section className={styles.flats}>
         <div className={styles.flats_grid}>
           {flatsData.map((flat) => {
-            return <FlatCard id={flat.id} title={flat.title} cover={flat.cover} />;
+            return <FlatCard id={flat.id} title={flat.title} cover={flat.cover} key={flat.id} />;
           })}
         </div>
       </section>
