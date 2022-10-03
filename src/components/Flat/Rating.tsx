@@ -4,7 +4,7 @@ import styles from "./Rating.module.scss";
 
 type Rating = Pick<Flat, "rating">;
 
-const Rating: React.FunctionComponent<Rating> = ({ rating }) => {
+const Rating: React.FunctionComponent<Rating> = (props: Rating) => {
   return <h2>Rating</h2>;
 };
 

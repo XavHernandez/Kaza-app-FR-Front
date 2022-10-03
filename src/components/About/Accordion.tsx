@@ -6,7 +6,7 @@ type AccordionDetails = {
   children: JSX.Element;
 };
 
-const Accordion: React.FunctionComponent<AccordionDetails> = ({ title, children }) => {
+const Accordion: React.FunctionComponent<AccordionDetails> = (props: AccordionDetails) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [height, setHeight] = useState<number | undefined>(0);
   const content = useRef<HTMLDivElement>(null);
@@ -27,7 +27,7 @@ const Accordion: React.FunctionComponent<AccordionDetails> = ({ title, children 
   return (
     <div className={styles.accordion}>
       <div className={styles.accordion_header} onClick={toggleAccordion}>
-        <h2 className={styles.accordion_title}>{title}</h2>
+        <h2 className={styles.accordion_title}>{props.title}</h2>
         <svg
           className={`${styles.accordion_icon} ${isOpen ? `${styles.rotated}` : ""}`}
           viewBox="0 0 25 15"
@@ -36,7 +36,7 @@ const Accordion: React.FunctionComponent<AccordionDetails> = ({ title, children 
         </svg>
       </div>
       <div className={styles.accordion_content} ref={content} style={{ height: `${height}px` }}>
-        {isOpen && children}
+        {isOpen && props.children}
       </div>
     </div>
   );

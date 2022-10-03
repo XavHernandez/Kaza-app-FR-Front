@@ -5,18 +5,18 @@ import styles from "./FlatCard.module.scss";
 
 type FlatCardDetails = Pick<Flat, "id" | "title" | "cover">;
 
-const FlatCard: React.FunctionComponent<FlatCardDetails> = ({ id, title, cover }) => {
+const FlatCard: React.FunctionComponent<FlatCardDetails> = (props: FlatCardDetails) => {
   const navigate = useNavigate();
   function goToFlat(): void {
-    navigate(`/${id}`);
+    navigate(`/${props.id}`);
   }
 
   return (
     <div className={styles.card} onClick={goToFlat}>
       <picture>
-        <img src={cover} alt={title} className={styles.card_cover} />
+        <img src={props.cover} alt={props.title} className={styles.card_cover} />
       </picture>
-      <p className={styles.card_title}>{title}</p>
+      <p className={styles.card_title}>{props.title}</p>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import styles from "./Carroussel.module.scss";
 
 type CarrousselImages = Pick<Flat, "pictures">;
 
-const Carroussel: React.FunctionComponent<CarrousselImages> = ({ pictures }) => {
+const Carroussel: React.FunctionComponent<CarrousselImages> = (props: CarrousselImages) => {
   return <h2>Carroussel</h2>;
 };
 

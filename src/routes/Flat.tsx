@@ -5,6 +5,7 @@ import getFlatData from "../api/getFlatData";
 
 const FlatPage: React.FunctionComponent = () => {
   const flatData = useLoaderData() as Flat;
+  const flatPictures = flatData.pictures;
 
   return <h2>{flatData.title}</h2>;
 };
