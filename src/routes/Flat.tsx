@@ -5,10 +5,25 @@ import getFlatData from "../api/getFlatData";
 import styles from "./Flat.module.scss";
 import Carroussel from "../components/Flat/Carroussel";
 import Rating from "../components/Flat/Rating";
+import Accordion from "../components/About/Accordion";
 
 const FlatPage: React.FunctionComponent = () => {
   const flatData = useLoaderData() as Flat;
   const flatPictures = flatData.pictures;
+
+  const description = (): JSX.Element => {
+    return <p>{flatData.description}</p>;
+  };
+
+  const equipments = (): JSX.Element => {
+    return (
+      <div className={styles.equipments}>
+        {flatData.equipments.map((equipment) => {
+          return <div className={styles.equipment}>{equipment}</div>;
+        })}
+      </div>
+    );
+  };
 
   return (
     <React.Fragment>
@@ -25,12 +40,18 @@ const FlatPage: React.FunctionComponent = () => {
         </div>
         <div className={styles.infos_host}>
           <Rating rating={flatData.rating} />
-          <div className={styles.infos_hostname}>{flatData.host.name}</div>
-          <picture className={styles.infos_hostpicture}>
-            <img src={flatData.host.picture} alt={flatData.host.name} />
-          </picture>
+          <div className={styles.infos_hostdetails}>
+            <div className={styles.infos_hostname}>{flatData.host.name}</div>
+            <picture className={styles.infos_hostpicture}>
+              <img src={flatData.host.picture} alt={flatData.host.name} />
+            </picture>
+          </div>
         </div>
       </section>
+      <div className={styles.accordions}>
+        <Accordion title={"Description"} children={description()} />
+        <Accordion title={"Equipements"} children={equipments()} />
+      </div>
     </React.Fragment>
   );
 };
