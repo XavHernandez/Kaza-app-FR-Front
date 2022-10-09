@@ -1,8 +1,8 @@
 {
   "name": "p11-xavier-hernandez",
-  "private": false,
+  "private": true,
   "version": "0.0.0",
-  "homepage": ".",
+  "homepage": "https://xavhernandez.github.io/Kaza-app-FR-Front/",
   "type": "module",
   "scripts": {
     "dev": "vite",
