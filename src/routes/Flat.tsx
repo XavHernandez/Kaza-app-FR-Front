@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import getFlatData from "../api/getFlatData";
 import styles from "./Flat.module.scss";
 import Carroussel from "../components/Flat/Carroussel";
+import Rating from "../components/Flat/Rating";
 
 const FlatPage: React.FunctionComponent = () => {
   const flatData = useLoaderData() as Flat;
@@ -21,6 +22,13 @@ const FlatPage: React.FunctionComponent = () => {
               return <div className={styles.infos_tag}>{tag}</div>;
             })}
           </div>
+        </div>
+        <div className={styles.infos_host}>
+          <Rating rating={flatData.rating} />
+          <div className={styles.infos_hostname}>{flatData.host.name}</div>
+          <picture className={styles.infos_hostpicture}>
+            <img src={flatData.host.picture} alt={flatData.host.name} />
+          </picture>
         </div>
       </section>
     </React.Fragment>
