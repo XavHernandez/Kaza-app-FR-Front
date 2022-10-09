@@ -1,0 +1,52 @@
+@import "../routes/App.module.scss";
+
+.infos {
+  width: min(90%, 1000px);
+  display: flex;
+  flex-direction: column;
+
+  &_flat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &_name {
+    color: $primary;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &_location {
+    margin-top: 10px;
+    color: $primary;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &_tags {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  &_tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 10px;
+    font-weight: 500;
+    min-width: 84px;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
