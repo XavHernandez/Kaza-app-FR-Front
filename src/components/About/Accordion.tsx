@@ -21,6 +21,20 @@ const Accordion: React.FunctionComponent<AccordionDetails> = (props: AccordionDe
 
   function animateToggle(): void {
     const size = content.current?.scrollHeight;
+    const children = content.current?.childNodes;
+
+    if (children?.length) {
+      const list = [...children] as HTMLElement[];
+      list.forEach((child) => {
+        child.style.opacity = "0";
+      });
+      setTimeout(() => {
+        list.forEach((child) => {
+          child.style.opacity = "1";
+        });
+      }, 350);
+    }
+
     isOpen ? setHeight(size) : setHeight(0);
   }
 
