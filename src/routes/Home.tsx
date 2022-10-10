@@ -1,6 +1,5 @@
 import type Flat from "../entities/Flat.interface";
-import React from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import getFlatsData from "../api/getFlatsData";
 import Hero from "../components/Home/Hero";
 import FlatCard from "../components/Home/FlatCard";
@@ -8,14 +7,22 @@ import background from "../assets/hero_home.jpg";
 import styles from "./Home.module.scss";
 
 const Home: React.FunctionComponent = () => {
-  const flatsData = useLoaderData() as Flat[];
+  const [flatsData, setFlatsData] = useState<Flat[]>();
+
+  useEffect(() => {
+    const fetchFlats = async () => {
+      const data = await getFlatsData();
+      setFlatsData(data);
+    };
+    fetchFlats();
+  }, []);
 
   return (
     <React.Fragment>
       <Hero imageUrl={background} title={true} />
       <section className={styles.flats}>
         <div className={styles.flats_grid}>
-          {flatsData.map((flat) => {
+          {flatsData?.map((flat) => {
             return <FlatCard id={flat.id} title={flat.title} cover={flat.cover} key={flat.id} />;
           })}
         </div>
@@ -23,9 +30,5 @@ const Home: React.FunctionComponent = () => {
     </React.Fragment>
   );
 };
-
-export function loader() {
-  return getFlatsData();
-}
 
 export default Home;
