@@ -8,7 +8,7 @@ const Rating: React.FunctionComponent<Rating> = (props: Rating) => {
   const ratings = new Array(5).fill("");
 
   function isActive(index: number): string {
-    return index + 1 <= Number(props?.rating) ? "#FF6060" : "#E3E3E3";
+    return index + 1 <= Number(props.rating) ? "#FF6060" : "#E3E3E3";
   }
 
   return (
